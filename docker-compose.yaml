@@ -1,0 +1,20 @@
+services:
+  nexus:
+    image: sonatype/nexus3
+    container_name: nexus
+    volumes:
+      - /docker_volumes/nexus-data:/nexus-data
+    ports:
+      - "80:8081" 
+      - "5000:5000" 
+    networks:
+      docker-net:
+        ipv4_address: 172.22.0.2
+    restart: always
+
+networks:
+  docker-net:
+    driver: bridge
+    ipam:
+      config:
+      - subnet: 172.22.0.0/24
