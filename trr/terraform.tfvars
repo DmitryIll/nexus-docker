@@ -25,7 +25,8 @@ vm=[
             "sudo apt-get update",
             "sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin",
             "git clone https://github.com/DmitryIll/nexus-docker.git",
-            
+            "cd nexus-docker/",
+            "docker compose up -d"
       ]},
 
 
